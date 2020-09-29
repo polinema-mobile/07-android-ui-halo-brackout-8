@@ -44,14 +44,18 @@ class MoveActivity : AppCompatActivity() {
 
     private fun getData() {
         val type = intent.getStringExtra(DATA_JENIS)
-        if (type.equals("Parcelable")) {
+        if (type.equals("Parcelable"))
+        {
             val dataMhs = intent.extras?.getParcelable<MoveActivity2>(DATA_MHS)
             nama = dataMhs!!.nama
             nim = dataMhs.nim.toString()
             dob = dataMhs.date
             kelamin = dataMhs.gender
             jurusan = dataMhs.jurusan
-        } else {
+        }
+
+        else
+        {
             nama = intent.getStringExtra(DATA_NAMA).toString()
             nim = intent.getStringExtra(DATA_NIM).toString()
             dob = intent.getStringExtra(DATA_DATE).toString()
