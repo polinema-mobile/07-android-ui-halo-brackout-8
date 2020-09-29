@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class MoveActivity2(
+data class Mahasiswa(
     var nama: String,
     var nim: Int,
     var date: String,

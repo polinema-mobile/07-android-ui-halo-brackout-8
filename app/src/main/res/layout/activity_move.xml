@@ -9,10 +9,11 @@
     <TextView
         android:id="@+id/nama"
         android:layout_width="87dp"
-        android:layout_height="20dp"
+        android:layout_height="30dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="Nama"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,6 +25,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginBottom="16dp"
         android:text="Data Nama"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/nim"
         app:layout_constraintStart_toEndOf="@+id/nama"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,10 +33,11 @@
     <TextView
         android:id="@+id/nim"
         android:layout_width="87dp"
-        android:layout_height="20dp"
+        android:layout_height="30dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="NIM"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nama" />
 
@@ -46,6 +49,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="Data NIM"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/tgl"
         app:layout_constraintStart_toEndOf="@+id/nim"
         app:layout_constraintTop_toBottomOf="@id/namaValue" />
@@ -53,10 +57,11 @@
     <TextView
         android:id="@+id/tgl"
         android:layout_width="87dp"
-        android:layout_height="20dp"
+        android:layout_height="30dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="Tanggal Lahir"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nim" />
 
@@ -68,6 +73,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="Data Tanggal Lahir"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/jk"
         app:layout_constraintStart_toEndOf="@+id/tgl"
         app:layout_constraintTop_toBottomOf="@id/nimValue" />
@@ -75,10 +81,11 @@
     <TextView
         android:id="@+id/jk"
         android:layout_width="87dp"
-        android:layout_height="20dp"
+        android:layout_height="30dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:text="Jenis Kelamin"
+        android:text="Gender"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tgl" />
 
@@ -90,6 +97,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="Data Jenis Kelalmin"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/jurusan"
         app:layout_constraintStart_toEndOf="@+id/jk"
         app:layout_constraintTop_toBottomOf="@id/tglValue" />
@@ -97,10 +105,11 @@
     <TextView
         android:id="@+id/jurusan"
         android:layout_width="87dp"
-        android:layout_height="20dp"
+        android:layout_height="30dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="Jurusan"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/jk" />
 
@@ -111,6 +120,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:text="Data Jurusan"
+        android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/jurusan"
         app:layout_constraintTop_toBottomOf="@id/jkValue" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,6 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
@@ -90,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             val kelamin = radioButtonSelection()
             val jurusan = spinenrJurusan.selectedItem.toString()
 
-            val dataMhs = MoveActivity2(nama, nim, dob, kelamin, jurusan)
+            val dataMhs = Mahasiswa(nama, nim, dob, kelamin, jurusan)
             val resultIntent = Intent(this, MoveActivity::class.java)
             resultIntent.putExtra(DATA_JENIS, "Parcelable")
             resultIntent.putExtra(DATA_MHS, dataMhs)

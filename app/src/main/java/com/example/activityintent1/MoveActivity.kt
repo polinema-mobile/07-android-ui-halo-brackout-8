@@ -1,9 +1,7 @@
 package com.example.activityintent1
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 
 class MoveActivity : AppCompatActivity() {
@@ -44,20 +42,16 @@ class MoveActivity : AppCompatActivity() {
 
     private fun getData() {
         val type = intent.getStringExtra(DATA_JENIS)
-        if (type.equals("Parcelable"))
-        {
-            val dataMhs = intent.extras?.getParcelable<MoveActivity2>(DATA_MHS)
+        if (type.equals("Parcelable")) {
+            val dataMhs = intent.extras?.getParcelable<Mahasiswa>(DATA_MHS)
             nama = dataMhs!!.nama
             nim = dataMhs.nim.toString()
             dob = dataMhs.date
             kelamin = dataMhs.gender
             jurusan = dataMhs.jurusan
-        }
-
-        else
-        {
+        } else {
             nama = intent.getStringExtra(DATA_NAMA).toString()
-            nim = intent.getStringExtra(DATA_NIM).toString()
+            nim = intent.getIntExtra(DATA_NIM, 0).toString()
             dob = intent.getStringExtra(DATA_DATE).toString()
             kelamin = intent.getStringExtra(DATA_KELAMIN).toString()
             jurusan = intent.getStringExtra(DATA_JURUSAN).toString()
