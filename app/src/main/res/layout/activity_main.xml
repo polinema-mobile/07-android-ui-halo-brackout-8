@@ -18,7 +18,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/editTextNama"
                 android:layout_width="355dp"
                 android:layout_height="67dp"
                 android:ems="10"
@@ -26,7 +26,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextNumber2"
+                android:id="@+id/editTextNIM"
                 android:layout_width="355dp"
                 android:layout_height="63dp"
                 android:ems="10"
@@ -34,7 +34,7 @@
                 android:inputType="number" />
 
             <EditText
-                android:id="@+id/editTextDate2"
+                android:id="@+id/editTextDate"
                 android:layout_width="355dp"
                 android:layout_height="63dp"
                 android:ems="10"
@@ -42,17 +42,18 @@
                 android:inputType="date" />
 
             <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/radioButtonLaki"
                     android:layout_width="184dp"
                     android:layout_height="48dp"
                     android:text="Laki-Laki" />
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/radioButtonPerempuan"
                     android:layout_width="184dp"
                     android:layout_height="45dp"
                     android:text="Perempuan" />
@@ -67,10 +68,16 @@
                 android:layout_marginEnd="8dp"/>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonIntent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Simpan Data" />
+                android:text=" SIMPAN DATA (INTENT)" />
+
+            <Button
+                android:id="@+id/buttonParcel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SIMPAN DATA (PARCELABLE)" />
         </LinearLayout>
     </ScrollView>
 
