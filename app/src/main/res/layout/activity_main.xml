@@ -19,24 +19,33 @@
 
             <EditText
                 android:id="@+id/editTextNama"
-                android:layout_width="355dp"
+                android:layout_width="360dp"
                 android:layout_height="67dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:ems="10"
                 android:hint="Nama Mahasiswa"
                 android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/editTextNIM"
-                android:layout_width="355dp"
-                android:layout_height="63dp"
+                android:layout_width="360dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
                 android:ems="10"
                 android:hint="Nomor Induk Mahasiswa"
                 android:inputType="number" />
 
             <EditText
                 android:id="@+id/editTextDate"
-                android:layout_width="355dp"
-                android:layout_height="63dp"
+                android:layout_width="360dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
                 android:ems="10"
                 android:hint="Tanggal Lahir"
                 android:inputType="date" />
@@ -44,39 +53,46 @@
             <RadioGroup
                 android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/radioButtonLaki"
-                    android:layout_width="184dp"
+                    android:layout_width="188dp"
                     android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
                     android:text="Laki-Laki" />
 
                 <RadioButton
                     android:id="@+id/radioButtonPerempuan"
-                    android:layout_width="184dp"
-                    android:layout_height="45dp"
+                    android:layout_width="188dp"
+                    android:layout_height="48dp"
                     android:text="Perempuan" />
             </RadioGroup>
 
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:layout_marginStart="8dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginBottom="16dp"/>
 
             <Button
                 android:id="@+id/buttonIntent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text=" SIMPAN DATA (INTENT)" />
 
             <Button
                 android:id="@+id/buttonParcel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="SIMPAN DATA (PARCELABLE)" />
         </LinearLayout>
     </ScrollView>
