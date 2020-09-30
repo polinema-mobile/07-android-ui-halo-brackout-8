@@ -19,33 +19,120 @@
 
             <EditText
                 android:id="@+id/editTextNama"
-                android:layout_width="360dp"
-                android:layout_height="67dp"
+                android:layout_width="392dp"
+                android:layout_height="64dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:ems="10"
                 android:hint="Nama Mahasiswa"
                 android:inputType="textPersonName" />
 
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="386dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="386dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <Spinner
+                android:id="@+id/spinner3"
+                android:layout_width="386dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword2"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="Ketik Ulang Password"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="Alasan memilih prodi "
+                android:inputType="textPersonName" />
+
             <EditText
                 android:id="@+id/editTextNIM"
                 android:layout_width="360dp"
-                android:layout_height="67dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
                 android:ems="10"
-                android:hint="Nomor Induk Mahasiswa"
+                android:hint="No. Induk Kependudukan"
                 android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName2"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="Peserta Akademik/Non-Akademik"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName3"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="Tempat Lahir"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/editTextDate"
                 android:layout_width="360dp"
-                android:layout_height="67dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginBottom="16dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
                 android:ems="10"
                 android:hint="Tanggal Lahir"
                 android:inputType="date" />
@@ -67,17 +154,133 @@
                     android:id="@+id/radioButtonPerempuan"
                     android:layout_width="188dp"
                     android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
                     android:text="Perempuan" />
             </RadioGroup>
 
-            <Spinner
-                android:id="@+id/spinner"
+            <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="188dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:text="Indonesia" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="188dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:text="Asing" />
+            </RadioGroup>
+
+            <Spinner
+                android:id="@+id/spinner4"
+                android:layout_width="386dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName4"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="Alamat"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName5"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="RT"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName6"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="RW"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName7"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="Kode Pos"
+                android:inputType="textPersonName" />
+
+            <Spinner
+                android:id="@+id/spinner5"
+                android:layout_width="386dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <Spinner
+                android:id="@+id/spinner6"
+                android:layout_width="386dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName8"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="Telp Rumah"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName9"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="No Hp"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName10"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/buttonIntent"
@@ -94,6 +297,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="SIMPAN DATA (PARCELABLE)" />
+
         </LinearLayout>
     </ScrollView>
 
