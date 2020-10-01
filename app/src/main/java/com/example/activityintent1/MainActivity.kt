@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
             val jurusan = spinenrJurusan.selectedItem.toString()
 
             val dataMhs = Mahasiswa(nama, nim, dob, kelamin, jurusan)
-            val resultIntent = Intent(this, MoveActivity::class.java)
+            val resultIntent = Intent(this, ResultFormActivity::class.java)
             resultIntent.putExtra(DATA_JENIS, "Parcelable")
             resultIntent.putExtra(DATA_MHS, dataMhs)
             startActivity(resultIntent)
@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
             val kelamin = radioButtonSelection()
             val jurusan = spinenrJurusan.selectedItem.toString()
 
-            val resultIntent = Intent(this, MoveActivity::class.java)
+            val resultIntent = Intent(this, ResultFormActivity::class.java)
             resultIntent.putExtra(DATA_JENIS, "Intent")
             resultIntent.putExtra(DATA_NAMA, nama)
             resultIntent.putExtra(DATA_NIM, nim)

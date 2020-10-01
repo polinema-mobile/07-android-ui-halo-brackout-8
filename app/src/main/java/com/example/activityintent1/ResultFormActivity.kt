@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 
-class MoveActivity : AppCompatActivity() {
+class ResultFormActivity : AppCompatActivity() {
     private val DATA_JENIS = "DATA_JENIS"
     private val DATA_MHS = "DATA_MHS"
     private val DATA_NAMA = "DATA_NAMA"
@@ -25,7 +25,7 @@ class MoveActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_move)
+        setContentView(R.layout.activity_result_form)
 
         setUp()
         getData()
