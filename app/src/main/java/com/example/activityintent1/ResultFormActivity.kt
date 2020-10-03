@@ -3,6 +3,7 @@ package com.example.activityintent1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.activityintent1.dataparcelize.Mahasiswa
 
 class ResultFormActivity : AppCompatActivity() {
     private val DATA_JENIS = "DATA_JENIS"

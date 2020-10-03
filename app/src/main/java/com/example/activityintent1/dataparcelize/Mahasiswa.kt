@@ -1,4 +1,4 @@
-package com.example.activityintent1
+package com.example.activityintent1.dataparcelize
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
