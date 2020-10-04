@@ -2,7 +2,6 @@ package com.example.activityintent1
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -12,7 +11,6 @@ import com.example.activityintent1.dataparcelize.ParentData
 import com.example.activityintent1.dataparcelize.PersonalData
 
 class ParentDataActivity : AppCompatActivity() {
-    private val DATA_PRIBADI = "DATA_PRIBADI"
     private val DATA_PARENT = "DATA_PARENT"
 
     private lateinit var namaAyah: String
@@ -64,8 +62,7 @@ class ParentDataActivity : AppCompatActivity() {
         setContentView(R.layout.activity_parent_data)
 
         setUp()
-        getDataParent()
-
+        loadDataSpinner()
 
         btnParentToSchool.setOnClickListener {
             intentToSchool()
@@ -105,7 +102,6 @@ class ParentDataActivity : AppCompatActivity() {
         adapterProvinsi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         adapterKota.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-
         spinnerProvinsi.adapter = adapterProvinsi
         spinnerKota.adapter = adapterKota
     }
@@ -136,9 +132,6 @@ class ParentDataActivity : AppCompatActivity() {
     }
 
     private fun getDataParent() {
-        val dataPribadi = intent.getParcelableExtra<PersonalData>(DATA_PRIBADI)
-        Log.e(DATA_PRIBADI, dataPribadi.toString())
-
         namaAyah = editTextNamaAyah.text.toString()
         nikAyah = editTextNikAyah.text.toString().toInt()
         namaIbu = editTextNamaIbu.text.toString()
