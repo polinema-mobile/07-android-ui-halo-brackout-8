@@ -24,7 +24,8 @@
                 android:textSize="30sp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:text="Data Sekolah Asal"/>
+                android:text="Data Sekolah Asal"
+                android:textColor="@color/textPopupEditTextColor" />
 
             <EditText
                 android:id="@+id/editTextUnivAsal"

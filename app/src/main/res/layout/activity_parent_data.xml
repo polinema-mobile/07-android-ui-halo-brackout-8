@@ -20,7 +20,8 @@
             android:textSize="30sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:text="Data Orang Tua"/>
+            android:text="Data Orang Tua"
+            android:textColor="@color/textPopupEditTextColor" />
 
         <EditText
             android:id="@+id/editTextNamaAyah"
