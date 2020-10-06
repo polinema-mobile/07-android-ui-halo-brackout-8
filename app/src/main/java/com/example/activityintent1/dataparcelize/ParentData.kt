@@ -12,12 +12,15 @@ data class ParentData(
     var tanggalLahirAyah: String,
     var tanggalLahirIbu: String,
     var alamatParent: String,
+    var Rt : Int,
+    var Rw : Int,
     var kodePos: String,
+    var provinsi: String,
+    var kota: String,
     var phoneOrtu: String,
     var pendidikanAyah: String,
     var pendidikanIbu: String,
     var pekerjaanAyah: String,
-    var pekerjaanIbu: String,
-    var dataPribadi: PersonalData
+    var pekerjaanIbu: String
 
 ) : Parcelable

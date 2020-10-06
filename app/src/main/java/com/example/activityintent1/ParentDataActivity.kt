@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import com.example.activityintent1.dataparcelize.ParentData
-import com.example.activityintent1.dataparcelize.PersonalData
 
 class ParentDataActivity : AppCompatActivity() {
     private val DATA_PARENT = "DATA_PARENT"
@@ -31,7 +30,6 @@ class ParentDataActivity : AppCompatActivity() {
     private lateinit var pendidikanIbu: String
     private lateinit var pekerjaanAyah: String
     private lateinit var pekerjaanIbu: String
-    private lateinit var dataPribadi: PersonalData
 
     private lateinit var editTextNamaAyah: EditText
     private lateinit var editTextNikAyah: EditText
@@ -117,13 +115,17 @@ class ParentDataActivity : AppCompatActivity() {
             tanggalLahirAyah,
             tanggalLahirIbu,
             alamatParent,
+            Rt,
+            Rw,
             kodePos,
+            provinsi,
+            kota,
             phoneOrtu,
             pendidikanAyah,
             pendidikanIbu,
             pekerjaanAyah,
-            pekerjaanIbu,
-            dataPribadi
+            pekerjaanIbu
+
         )
 
         val resultIntent = Intent(this, SchoolDataActivity::class.java)
