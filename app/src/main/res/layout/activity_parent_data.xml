@@ -122,73 +122,6 @@
             app:layout_constraintTop_toBottomOf="@id/editTextLahirIbu" />
 
         <EditText
-            android:id="@+id/editTextRT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:hint="RT"
-            android:inputType="number"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextAlamat" />
-
-        <TextView
-            android:id="@+id/textViewSlashRtRW"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:text="/"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/editTextRT"
-            app:layout_constraintTop_toBottomOf="@id/editTextAlamat" />
-
-        <EditText
-            android:id="@+id/editTextRW"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:hint="RW"
-            android:inputType="number"
-            app:layout_constraintStart_toEndOf="@id/textViewSlashRtRW"
-            app:layout_constraintTop_toBottomOf="@id/editTextAlamat" />
-
-        <EditText
-            android:id="@+id/editTextPostal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:hint="Kode Pos"
-            android:inputType="textPostalAddress"
-            app:layout_constraintStart_toEndOf="@+id/editTextRW"
-            app:layout_constraintTop_toBottomOf="@id/editTextAlamat" />
-
-        <Spinner
-            android:id="@+id/spinnerProvinsi"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextPostal" />
-
-        <Spinner
-            android:id="@+id/spinnerKota"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spinnerProvinsi" />
-
-        <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -200,7 +133,7 @@
             android:inputType="phone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spinnerKota" />
+            app:layout_constraintTop_toBottomOf="@id/editTextAlamat" />
 
         <EditText
             android:id="@+id/editTextEmail"

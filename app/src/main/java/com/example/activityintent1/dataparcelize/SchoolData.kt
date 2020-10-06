@@ -14,6 +14,5 @@ data class SchoolData(
     var kodePosUnivAsal:String,
     var akreditasiUnivAsal:String,
     var nilaiIPK:String,
-    var dataPribadi: PersonalData,
     var dataParent: ParentData
 ) : Parcelable

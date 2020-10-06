@@ -2,17 +2,16 @@ package com.example.activityintent1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.TextView
-import com.example.activityintent1.dataparcelize.Mahasiswa
+import androidx.appcompat.app.AppCompatDelegate
+import com.example.activityintent1.dataparcelize.SchoolData
 
 class ResultFormActivity : AppCompatActivity() {
-    private val DATA_JENIS = "DATA_JENIS"
-    private val DATA_MHS = "DATA_MHS"
-    private val DATA_NAMA = "DATA_NAMA"
-    private val DATA_NIM = "DATA_NIM"
-    private val DATA_DATE = "DATA_DATE"
-    private val DATA_KELAMIN = "DATA_KELAMIN"
-    private val DATA_JURUSAN = "DATA_JURUSAN"
+    private val DATA_SCHOOL = "DATA_SCHOOL"
+
     private lateinit var textNama: TextView
     private lateinit var textNim: TextView
     private lateinit var textDob: TextView
@@ -30,40 +29,38 @@ class ResultFormActivity : AppCompatActivity() {
 
         setUp()
         getData()
-        setTextView()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menu?.add(Menu.NONE, 1 , Menu.NONE, "Light Mode")
+        menu?.add(Menu.NONE, 2 , Menu.NONE, "Dark Mode")
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            1 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            else -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun setUp() {
-        textNama = findViewById(R.id.namaValue)
-        textNim = findViewById(R.id.nimValue)
-        textDob = findViewById(R.id.tglValue)
-        textKelamin = findViewById(R.id.jkValue)
-        textJurusan = findViewById(R.id.jurusanValue)
+
     }
 
     private fun getData() {
-        val type = intent.getStringExtra(DATA_JENIS)
-        if (type.equals("Parcelable")) {
-            val dataMhs = intent.extras?.getParcelable<Mahasiswa>(DATA_MHS)
-            nama = dataMhs!!.nama
-            nim = dataMhs.nim.toString()
-            dob = dataMhs.date
-            kelamin = dataMhs.gender
-            jurusan = dataMhs.jurusan
-        } else {
-            nama = intent.getStringExtra(DATA_NAMA).toString()
-            nim = intent.getIntExtra(DATA_NIM, 0).toString()
-            dob = intent.getStringExtra(DATA_DATE).toString()
-            kelamin = intent.getStringExtra(DATA_KELAMIN).toString()
-            jurusan = intent.getStringExtra(DATA_JURUSAN).toString()
-        }
+        val dataSchool = intent.getParcelableExtra<SchoolData>(DATA_SCHOOL)
+        Log.e(DATA_SCHOOL, dataSchool.toString())
+        Log.e(DATA_SCHOOL, dataSchool!!.dataParent.toString())
+        Log.e(DATA_SCHOOL, dataSchool.dataParent.dataPribadi.toString())
     }
 
-    private fun setTextView() {
-        textNama.text = nama
-        textNim.text = nim
-        textDob.text = dob
-        textKelamin.text = kelamin
-        textJurusan.text= jurusan
-    }
+//    private fun setTextView() {
+//        textNama.text = nama
+//        textNim.text = nim
+//        textDob.text = dob
+//        textKelamin.text = kelamin
+//        textJurusan.text= jurusan
+//    }
 }

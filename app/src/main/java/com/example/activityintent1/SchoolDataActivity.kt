@@ -2,17 +2,18 @@ package com.example.activityintent1
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.activityintent1.dataparcelize.ParentData
-import com.example.activityintent1.dataparcelize.PersonalData
 import com.example.activityintent1.dataparcelize.SchoolData
 
 class SchoolDataActivity : AppCompatActivity() {
-    private val DATA_PRIBADI = "DATA_PRIBADI"
     private val DATA_PARENT = "DATA_PARENT"
     private val DATA_SCHOOL = "DATA_SCHOOL"
 
@@ -25,10 +26,7 @@ class SchoolDataActivity : AppCompatActivity() {
     private lateinit var kodePosUnivAsal: String
     private lateinit var akreditasiUnivAsal: String
     private lateinit var nilaiIPK: String
-    private lateinit var dataPribadi: PersonalData
     private lateinit var dataParent: ParentData
-
-    private lateinit var btnGoToResult: Button
 
     private lateinit var editTextnamaUnivAsal: EditText
     private lateinit var editTextnamaFakultasAsal: EditText
@@ -39,6 +37,7 @@ class SchoolDataActivity : AppCompatActivity() {
     private lateinit var editTextkodePosUnivAsal: EditText
     private lateinit var editTextakreditasiUnivAsal: EditText
     private lateinit var editTextnilaiIPK: EditText
+    private lateinit var btnGoToResult: Button
 
     private lateinit var dataprovinsiUnivAsal: Array<String>
     private lateinit var datakotaUnivAsal: Array<String>
@@ -53,6 +52,20 @@ class SchoolDataActivity : AppCompatActivity() {
         btnGoToResult.setOnClickListener {
             intentToResult()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menu?.add(Menu.NONE, 1 , Menu.NONE, "Light Mode")
+        menu?.add(Menu.NONE, 2 , Menu.NONE, "Dark Mode")
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            1 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            else -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun setUp() {
@@ -95,10 +108,8 @@ class SchoolDataActivity : AppCompatActivity() {
             kodePosUnivAsal,
             akreditasiUnivAsal,
             nilaiIPK,
-            dataPribadi,
             dataParent
         )
-
         val resultIntent = Intent(this, ResultFormActivity::class.java)
         resultIntent.putExtra(DATA_SCHOOL, dataSchool)
         startActivity(resultIntent)
@@ -114,5 +125,6 @@ class SchoolDataActivity : AppCompatActivity() {
         kodePosUnivAsal = editTextkodePosUnivAsal.text.toString()
         akreditasiUnivAsal = editTextakreditasiUnivAsal.text.toString()
         nilaiIPK = editTextnilaiIPK.text.toString()
+        dataParent = intent.getParcelableExtra<ParentData>(DATA_PARENT)!!
     }
 }
