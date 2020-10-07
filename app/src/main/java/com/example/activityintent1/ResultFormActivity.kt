@@ -7,9 +7,13 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.activityintent1.dataparcelize.PersonalData
+import com.example.activityintent1.dataparcelize.ParentData
 import com.example.activityintent1.dataparcelize.SchoolData
 
 class ResultFormActivity : AppCompatActivity() {
+    private val DATA_PRIBADI = "DATA_PRIBADI"
+    private val DATA_PARENT = "DATA_PARENT"
     private val DATA_SCHOOL = "DATA_SCHOOL"
 
     private lateinit var textNama: TextView
@@ -95,9 +99,9 @@ class ResultFormActivity : AppCompatActivity() {
     }
 
     private fun getData() {
+        val dataPribadi = intent.getParcelableExtra<PersonalData>(DATA_PRIBADI)!!
+        val dataParent = intent.getParcelableExtra<ParentData>(DATA_PARENT)!!
         val dataSchool = intent.getParcelableExtra<SchoolData>(DATA_SCHOOL)!!
-        val dataParent = dataSchool.dataParent
-        val dataPribadi = dataSchool.dataParent.dataPribadi
 
         schoolNamaUnivAsal = dataSchool.namaUnivAsal
         schoolNamaFakultasAsal = dataSchool.namaFakultasAsal
@@ -117,7 +121,7 @@ class ResultFormActivity : AppCompatActivity() {
         parentTanggalLahirIbu = dataParent.tanggalLahirIbu
         parentAlamatParent = dataParent.alamatParent
         parentPhoneOrtu = dataParent.phoneOrtu
-        parentEmailOrtu = dataParent.emailOrtu
+        parentEmailOrtu = dataParent.emailParent
         parentPendidikanAyah = dataParent.pendidikanAyah
         parentPendidikanIbu = dataParent.pendidikanIbu
         parentPekerjaanAyah = dataParent.pekerjaanAyah
@@ -144,9 +148,9 @@ class ResultFormActivity : AppCompatActivity() {
         pribadiPhone = dataPribadi.Phone
         pribadiEmail = dataPribadi.Email
 
+        Log.e(DATA_SCHOOL, dataPribadi.toString())
+        Log.e(DATA_SCHOOL, dataParent.toString())
         Log.e(DATA_SCHOOL, dataSchool.toString())
-        Log.e(DATA_SCHOOL, dataSchool.dataParent.toString())
-        Log.e(DATA_SCHOOL, dataSchool.dataParent.dataPribadi.toString())
     }
 
 //    private fun setTextView() {

@@ -86,15 +86,16 @@ class ParentDataActivity : AppCompatActivity() {
             tanggalLahirIbu = editTextLahirIbu.text.toString(),
             alamatParent = editTextAlamat.text.toString(),
             phoneOrtu = editTextPhone.text.toString(),
-            emailOrtu = editTextPhone.text.toString(),
+            emailParent = editTextEmail.text.toString(),
             pendidikanAyah = editTextPendidikanAyah.text.toString(),
             pendidikanIbu = editTextPendidikanIbu.text.toString(),
             pekerjaanAyah = editTextPekerjaanAyah.text.toString(),
             pekerjaanIbu = editTextPekerjaanIbu.text.toString(),
-            dataPribadi = intent.getParcelableExtra<PersonalData>(DATA_PRIBADI)!!
         )
+        val dataPribadi = intent.getParcelableExtra<PersonalData>(DATA_PRIBADI)!!
         val resultIntent = Intent(this, SchoolDataActivity::class.java)
         resultIntent.putExtra(DATA_PARENT, dataParent)
+        resultIntent.putExtra(DATA_PRIBADI, dataPribadi)
         startActivity(resultIntent)
     }
 }

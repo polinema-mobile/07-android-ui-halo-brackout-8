@@ -10,10 +10,12 @@ import android.widget.EditText
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.activityintent1.dataparcelize.PersonalData
 import com.example.activityintent1.dataparcelize.ParentData
 import com.example.activityintent1.dataparcelize.SchoolData
 
 class SchoolDataActivity : AppCompatActivity() {
+    private val DATA_PRIBADI = "DATA_PRIBADI"
     private val DATA_PARENT = "DATA_PARENT"
     private val DATA_SCHOOL = "DATA_SCHOOL"
 
@@ -94,11 +96,14 @@ class SchoolDataActivity : AppCompatActivity() {
             alamatUnivAsal = editTextAlamatUnivAsal.text.toString(),
             kodePosUnivAsal = editTextKodePos.text.toString(),
             akreditasiUnivAsal = editTextAkreditasiUnivAsal.text.toString(),
-            nilaiIPK = editTextNilaiIPK.text.toString(),
-            dataParent = intent.getParcelableExtra<ParentData>(DATA_PARENT)!!
+            nilaiIPK = editTextNilaiIPK.text.toString()
         )
+        val dataParent = intent.getParcelableExtra<ParentData>(DATA_PARENT)!!
+        val dataPribadi = intent.getParcelableExtra<PersonalData>(DATA_PRIBADI)!!
         val resultIntent = Intent(this, ResultFormActivity::class.java)
         resultIntent.putExtra(DATA_SCHOOL, dataSchool)
+        resultIntent.putExtra(DATA_PARENT, dataParent)
+        resultIntent.putExtra(DATA_PRIBADI, dataPribadi)
         startActivity(resultIntent)
     }
 }
