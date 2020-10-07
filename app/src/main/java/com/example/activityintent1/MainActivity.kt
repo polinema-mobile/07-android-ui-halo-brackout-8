@@ -14,27 +14,6 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
     private val DATA_PRIBADI = "DATA_PRIBADI"
 
-    private lateinit var Nama: String
-    private lateinit var Fakultas: String
-    private lateinit var Prodi: String
-    private lateinit var Status: String
-    private lateinit var Password: String
-    private var Alasan: String = " "
-    private var Nik: Int = 0
-    private var Prestasi: String = " "
-    private lateinit var Tempat: String
-    private lateinit var Tanggal: String
-    private lateinit var JenisKelamin: String
-    private lateinit var Kewarganegaraan: String
-    private lateinit var Agama: String
-    private var Rt: Int = 0
-    private var Rw: Int = 0
-    private lateinit var KodePos: String
-    private lateinit var Provinsi: String
-    private lateinit var Kota: String
-    private lateinit var Phone: String
-    private lateinit var Email: String
-
     private lateinit var editTextNama: EditText
     private lateinit var spinnerFakultas: Spinner
     private lateinit var spinnerProdi: Spinner
@@ -187,55 +166,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun intentToParent() {
-        getDataPribadi()
-
         val dataPribadi = PersonalData(
-            Nama,
-            Fakultas,
-            Prodi,
-            Status,
-            Password,
-            Alasan,
-            Nik,
-            Prestasi,
-            Tempat,
-            Tanggal,
-            JenisKelamin,
-            Kewarganegaraan,
-            Agama,
-            Rt,
-            Rw,
-            KodePos,
-            Provinsi,
-            Kota,
-            Phone,
-            Email
+            Nama = editTextNama.text.toString(),
+            Fakultas = spinnerFakultas.selectedItem.toString(),
+            Prodi = spinnerProdi.selectedItem.toString(),
+            Status = spinnerStatus.selectedItem.toString(),
+            Password = editTextPassword.text.toString(),
+            Alasan = editTextAlasan.text.toString(),
+            Nik = editTextNik.text.toString(),
+            Prestasi = editTextPrestasi.text.toString(),
+            Tempat = editTextTempat.text.toString(),
+            Tanggal = editTextDate.text.toString(),
+            JenisKelamin = radioButtonSelectionSex(),
+            Kewarganegaraan = radioButtonSelectionNation(),
+            Agama = spinnerAgama.selectedItem.toString(),
+            Rt = editTextRt.text.toString(),
+            Rw = editTextRw.text.toString(),
+            KodePos = editTextPostal.text.toString(),
+            Provinsi = spinnerProvinsi.selectedItem.toString(),
+            Kota = spinnerKota.selectedItem.toString(),
+            Phone = editTextPhone.text.toString(),
+            Email = editTextEmail.text.toString()
         )
         val resultIntent = Intent(this, ParentDataActivity::class.java)
         resultIntent.putExtra(DATA_PRIBADI, dataPribadi)
         startActivity(resultIntent)
-    }
-
-    private fun getDataPribadi() {
-        Nama = editTextNama.text.toString()
-        Fakultas = spinnerFakultas.selectedItem.toString()
-        Prodi = spinnerProdi.selectedItem.toString()
-        Status = spinnerStatus.selectedItem.toString()
-        Password = editTextPassword.text.toString()
-        Alasan = editTextAlasan.text.toString()
-        Nik = editTextNik.text.toString().toInt()
-        Prestasi = editTextPrestasi.text.toString()
-        Tempat = editTextTempat.text.toString()
-        Tanggal = editTextDate.text.toString()
-        JenisKelamin = radioButtonSelectionSex()
-        Kewarganegaraan = radioButtonSelectionNation()
-        Agama = spinnerAgama.selectedItem.toString()
-        Rt = editTextRt.text.toString().toInt()
-        Rw = editTextRw.text.toString().toInt()
-        KodePos = editTextPostal.text.toString()
-        Provinsi = spinnerProvinsi.selectedItem.toString()
-        Kota = spinnerKota.selectedItem.toString()
-        Phone = editTextPhone.text.toString()
-        Email = editTextEmail.text.toString()
     }
 }

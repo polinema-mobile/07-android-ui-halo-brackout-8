@@ -2,6 +2,7 @@ package com.example.activityintent1
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -14,21 +15,6 @@ import com.example.activityintent1.dataparcelize.PersonalData
 class ParentDataActivity : AppCompatActivity() {
     private val DATA_PRIBADI = "DATA_PRIBADI"
     private val DATA_PARENT = "DATA_PARENT"
-
-    private lateinit var namaAyah: String
-    private var nikAyah: Int = 0
-    private lateinit var namaIbu: String
-    private var nikIbu: Int = 0
-    private lateinit var tanggalLahirAyah: String
-    private lateinit var tanggalLahirIbu: String
-    private lateinit var alamatParent: String
-    private lateinit var phoneOrtu: String
-    private lateinit var emailOrtu: String
-    private lateinit var pendidikanAyah: String
-    private lateinit var pendidikanIbu: String
-    private lateinit var pekerjaanAyah: String
-    private lateinit var pekerjaanIbu: String
-    private lateinit var dataPribadi: PersonalData
 
     private lateinit var editTextNamaAyah: EditText
     private lateinit var editTextNikAyah: EditText
@@ -72,59 +58,43 @@ class ParentDataActivity : AppCompatActivity() {
 
     private fun setUp() {
         editTextNamaAyah = findViewById(R.id.editTextNamaAyah)
-        editTextNikAyah= findViewById(R.id.editTextNikAyah)
-        editTextNamaIbu= findViewById(R.id.editTextNamaIbu)
-        editTextNikIbu= findViewById(R.id.editTextNikIbu)
-        editTextLahirAyah= findViewById(R.id.editTextLahirAyah)
-        editTextLahirIbu= findViewById(R.id.editTextLahirIbu)
-        editTextAlamat= findViewById(R.id.editTextAlamat)
-        editTextPhone= findViewById(R.id.editTextPhone)
-        editTextEmail= findViewById(R.id.editTextEmail)
-        editTextPendidikanAyah= findViewById(R.id.editTextPendidikanAyah)
-        editTextPendidikanIbu= findViewById(R.id.editTextPendidikanIbu)
-        editTextPekerjaanAyah= findViewById(R.id.editTextPekerjaanAyah)
-        editTextPekerjaanIbu= findViewById(R.id.editTextPekerjaanIbu)
+        editTextNikAyah = findViewById(R.id.editTextNikAyah)
+        editTextNamaIbu = findViewById(R.id.editTextNamaIbu)
+        editTextNikIbu = findViewById(R.id.editTextNikIbu)
+        editTextLahirAyah = findViewById(R.id.editTextLahirAyah)
+        editTextLahirIbu = findViewById(R.id.editTextLahirIbu)
+        editTextAlamat = findViewById(R.id.editTextAlamat)
+        editTextPhone = findViewById(R.id.editTextPhone)
+        editTextEmail = findViewById(R.id.editTextEmail)
+        editTextPendidikanAyah = findViewById(R.id.editTextPendidikanAyah)
+        editTextPendidikanIbu = findViewById(R.id.editTextPendidikanIbu)
+        editTextPekerjaanAyah = findViewById(R.id.editTextPekerjaanAyah)
+        editTextPekerjaanIbu = findViewById(R.id.editTextPekerjaanIbu)
         btnParentToSchool = findViewById(R.id.btnParentToSchool)
+
+        val dataPribadi = intent.getParcelableExtra<PersonalData>(DATA_PRIBADI)!!
+        Log.e(DATA_PRIBADI, dataPribadi.toString())
     }
 
     private fun intentToSchool() {
-        getDataParent()
-
         val dataParent = ParentData(
-            namaAyah,
-            nikAyah,
-            namaIbu,
-            nikIbu,
-            tanggalLahirAyah,
-            tanggalLahirIbu,
-            alamatParent,
-            phoneOrtu,
-            emailOrtu,
-            pendidikanAyah,
-            pendidikanIbu,
-            pekerjaanAyah,
-            pekerjaanIbu,
-            dataPribadi
+            namaAyah = editTextNamaAyah.text.toString(),
+            nikAyah = editTextNikAyah.text.toString(),
+            namaIbu = editTextNamaIbu.text.toString(),
+            nikIbu = editTextNikIbu.text.toString(),
+            tanggalLahirAyah = editTextLahirAyah.text.toString(),
+            tanggalLahirIbu = editTextLahirIbu.text.toString(),
+            alamatParent = editTextAlamat.text.toString(),
+            phoneOrtu = editTextPhone.text.toString(),
+            emailOrtu = editTextPhone.text.toString(),
+            pendidikanAyah = editTextPendidikanAyah.text.toString(),
+            pendidikanIbu = editTextPendidikanIbu.text.toString(),
+            pekerjaanAyah = editTextPekerjaanAyah.text.toString(),
+            pekerjaanIbu = editTextPekerjaanIbu.text.toString(),
+            dataPribadi = intent.getParcelableExtra<PersonalData>(DATA_PRIBADI)!!
         )
         val resultIntent = Intent(this, SchoolDataActivity::class.java)
         resultIntent.putExtra(DATA_PARENT, dataParent)
         startActivity(resultIntent)
-    }
-
-    private fun getDataParent() {
-        namaAyah = editTextNamaAyah.text.toString()
-        nikAyah = editTextNikAyah.text.toString().toInt()
-        namaIbu = editTextNamaIbu.text.toString()
-        nikIbu = editTextNikIbu.text.toString().toInt()
-        tanggalLahirAyah = editTextLahirAyah.text.toString()
-        tanggalLahirIbu = editTextLahirIbu.text.toString()
-        alamatParent = editTextAlamat.text.toString()
-        phoneOrtu = editTextPhone.text.toString()
-        emailOrtu = editTextEmail.text.toString()
-        pendidikanAyah = editTextPendidikanAyah.text.toString()
-        pendidikanIbu = editTextPendidikanIbu.text.toString()
-        pekerjaanAyah = editTextPekerjaanAyah.text.toString()
-        pekerjaanIbu = editTextPekerjaanIbu.text.toString()
-        dataPribadi = intent.getParcelableExtra<PersonalData>(DATA_PRIBADI)!!
     }
 }

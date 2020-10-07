@@ -6,9 +6,9 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class ParentData(
     var namaAyah: String,
-    var nikAyah: Int,
+    var nikAyah: String,
     var namaIbu: String,
-    var nikIbu: Int,
+    var nikIbu: String,
     var tanggalLahirAyah: String,
     var tanggalLahirIbu: String,
     var alamatParent: String,

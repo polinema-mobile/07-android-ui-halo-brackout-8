@@ -17,30 +17,19 @@ class SchoolDataActivity : AppCompatActivity() {
     private val DATA_PARENT = "DATA_PARENT"
     private val DATA_SCHOOL = "DATA_SCHOOL"
 
-    private lateinit var namaUnivAsal: String
-    private lateinit var namaFakultasAsal: String
-    private lateinit var namaProdiAsal: String
-    private lateinit var provinsiUnivAsal: String
-    private lateinit var kotaUnivAsal: String
-    private lateinit var alamatUnivAsal: String
-    private lateinit var kodePosUnivAsal: String
-    private lateinit var akreditasiUnivAsal: String
-    private lateinit var nilaiIPK: String
-    private lateinit var dataParent: ParentData
-
-    private lateinit var editTextnamaUnivAsal: EditText
-    private lateinit var editTextnamaFakultasAsal: EditText
-    private lateinit var editTextnamaProdiAsal: EditText
-    private lateinit var spinnerprovinsiUnivAsal: Spinner
-    private lateinit var spinnerkotaUnivAsal: Spinner
-    private lateinit var editTextalamatUnivAsal: EditText
-    private lateinit var editTextkodePosUnivAsal: EditText
-    private lateinit var editTextakreditasiUnivAsal: EditText
-    private lateinit var editTextnilaiIPK: EditText
+    private lateinit var editTextUnivAsal: EditText
+    private lateinit var editTextFakultasAsal: EditText
+    private lateinit var editTextProdiAsal: EditText
+    private lateinit var spinnerProvinsiUnivAsal: Spinner
+    private lateinit var spinnerKotaUnivAsal: Spinner
+    private lateinit var editTextAlamatUnivAsal: EditText
+    private lateinit var editTextKodePos: EditText
+    private lateinit var editTextAkreditasiUnivAsal: EditText
+    private lateinit var editTextNilaiIPK: EditText
     private lateinit var btnGoToResult: Button
 
-    private lateinit var dataprovinsiUnivAsal: Array<String>
-    private lateinit var datakotaUnivAsal: Array<String>
+    private lateinit var dataProvinsi: Array<String>
+    private lateinit var dataKota: Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,62 +58,47 @@ class SchoolDataActivity : AppCompatActivity() {
     }
 
     private fun setUp() {
-        editTextnamaUnivAsal = findViewById(R.id.editTextUnivAsal)
-        editTextnamaFakultasAsal = findViewById(R.id.editTextFakultasAsal)
-        editTextnamaProdiAsal = findViewById(R.id.editTextProdiAsal)
-        spinnerprovinsiUnivAsal= findViewById(R.id.spinnerProvinsiUnivAsal)
-        spinnerkotaUnivAsal= findViewById(R.id.spinnerKotaUnivAsal)
-        editTextalamatUnivAsal = findViewById(R.id.editTextAlamatUnivAsal)
-        editTextkodePosUnivAsal = findViewById(R.id.editTextKodePos)
-        editTextakreditasiUnivAsal = findViewById(R.id.editTextAkreditasiUnivAsal)
-        editTextnilaiIPK = findViewById(R.id.editTextNilaiIPK)
+        editTextUnivAsal = findViewById(R.id.editTextUnivAsal)
+        editTextFakultasAsal = findViewById(R.id.editTextFakultasAsal)
+        editTextProdiAsal = findViewById(R.id.editTextProdiAsal)
+        spinnerProvinsiUnivAsal = findViewById(R.id.spinnerProvinsiUnivAsal)
+        spinnerKotaUnivAsal = findViewById(R.id.spinnerKotaUnivAsal)
+        editTextAlamatUnivAsal = findViewById(R.id.editTextAlamatUnivAsal)
+        editTextKodePos = findViewById(R.id.editTextKodePos)
+        editTextAkreditasiUnivAsal = findViewById(R.id.editTextAkreditasiUnivAsal)
+        editTextNilaiIPK = findViewById(R.id.editTextNilaiIPK)
         btnGoToResult = findViewById(R.id.btnGoToResult)
 
-        dataprovinsiUnivAsal = resources.getStringArray(R.array.dataProvinsi)
-        datakotaUnivAsal = resources.getStringArray(R.array.dataKota)
+        dataProvinsi = resources.getStringArray(R.array.dataProvinsi)
+        dataKota = resources.getStringArray(R.array.dataKota)
     }
 
     private fun loadDataSpinner() {
-        val adapterProvinsi = ArrayAdapter(this, android.R.layout.simple_spinner_item, dataprovinsiUnivAsal)
-        val adapterKota = ArrayAdapter(this, android.R.layout.simple_spinner_item, datakotaUnivAsal)
+        val adapterProvinsi = ArrayAdapter(this, android.R.layout.simple_spinner_item, dataProvinsi)
+        val adapterKota = ArrayAdapter(this, android.R.layout.simple_spinner_item, dataKota)
 
         adapterProvinsi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         adapterKota.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-        spinnerprovinsiUnivAsal.adapter = adapterProvinsi
-        spinnerkotaUnivAsal.adapter = adapterKota
+        spinnerProvinsiUnivAsal.adapter = adapterProvinsi
+        spinnerKotaUnivAsal.adapter = adapterKota
     }
 
     private fun intentToResult() {
-        getDataSchool()
-
         val dataSchool = SchoolData(
-            namaUnivAsal,
-            namaFakultasAsal,
-            namaProdiAsal,
-            provinsiUnivAsal,
-            kotaUnivAsal,
-            alamatUnivAsal,
-            kodePosUnivAsal,
-            akreditasiUnivAsal,
-            nilaiIPK,
-            dataParent
+            namaUnivAsal = editTextUnivAsal.text.toString(),
+            namaFakultasAsal = editTextFakultasAsal.text.toString(),
+            namaProdiAsal = editTextProdiAsal.text.toString(),
+            provinsiUnivAsal = spinnerProvinsiUnivAsal.selectedItem.toString(),
+            kotaUnivAsal = spinnerKotaUnivAsal.selectedItem.toString(),
+            alamatUnivAsal = editTextAlamatUnivAsal.text.toString(),
+            kodePosUnivAsal = editTextKodePos.text.toString(),
+            akreditasiUnivAsal = editTextAkreditasiUnivAsal.text.toString(),
+            nilaiIPK = editTextNilaiIPK.text.toString(),
+            dataParent = intent.getParcelableExtra<ParentData>(DATA_PARENT)!!
         )
         val resultIntent = Intent(this, ResultFormActivity::class.java)
         resultIntent.putExtra(DATA_SCHOOL, dataSchool)
         startActivity(resultIntent)
-    }
-
-    private fun getDataSchool() {
-        namaUnivAsal = editTextnamaUnivAsal.text.toString()
-        namaFakultasAsal = editTextnamaFakultasAsal.text.toString()
-        namaProdiAsal = editTextnamaProdiAsal.text.toString()
-        provinsiUnivAsal = spinnerprovinsiUnivAsal.selectedItem.toString()
-        kotaUnivAsal = spinnerkotaUnivAsal.selectedItem.toString()
-        alamatUnivAsal = editTextalamatUnivAsal.text.toString()
-        kodePosUnivAsal = editTextkodePosUnivAsal.text.toString()
-        akreditasiUnivAsal = editTextakreditasiUnivAsal.text.toString()
-        nilaiIPK = editTextnilaiIPK.text.toString()
-        dataParent = intent.getParcelableExtra<ParentData>(DATA_PARENT)!!
     }
 }
